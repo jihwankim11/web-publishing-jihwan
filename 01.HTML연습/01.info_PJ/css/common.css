@@ -5,6 +5,16 @@
 
 /* Info PJ 공통 CSS - common.css */
 
+/* 공통클래스 */
+.border-style1 {
+  /* 보더(경계선) - border: 두께 종류 색상 */
+  border: 17px dashed hotpink;
+  /* 박스모서리 둥글게 */
+  border-radius: 100px;
+  /* 하단마진 덮어쓰기 */
+  margin-bottom: 20px;
+}
+
 /* 1. 상단영역 */
 .header {
   /* 배경색 */
@@ -32,11 +42,6 @@
 
   /* 값으로 border-box라고 주면 패딩과 보더가
         모두 포함된 박스로 설정된다! */
-
-  /* 보더(경계선) - border: 두께 종류 색상 */
-  border: 10px dotted hotpink;
-  /* 하단마진 덮어쓰기 */
-  margin-bottom: 20px;
 }
 
 /* 타이틀 */
@@ -61,8 +66,8 @@
   padding: 0;
 }
 /* 메인로고 */
-#main-logo{
-    width: 45px;
+#main-logo {
+  width: 45px;
 }
 /* 메뉴 리스트 */
 .header ul li {
@@ -75,6 +80,25 @@
   font-size: 25px;
   /* 패딩: 위아래0 양쪽17px */
   padding: 0 17px;
+}
+
+/* 메뉴링크  */
+.header ul li a {
+  /* 글자색 */
+  color: darkgreen;
+  /* 글자밑줄없앰 */
+  text-decoration: none;
+  /* 글자두껍게 */
+  font-weight: bold;
+}
+/* 링크 마우스 오버시
+가상클래스 선택자 hover 사용함! */
+.header ul li a:hover {
+  /* 글자색 */
+  color: hotpink;
+  /* 글자윗줄 */
+  text-decoration: underline;
+  /* 라인삭제는 cont+shift+k */
 }
 
 /* 2. 메인영역 */
