@@ -4,6 +4,7 @@
 /* 외부 CSS합치기 */
 @import url(./core.css);
 @import url(./reset.css);
+@import url(./common.css);
 
 body{
     /* background: 색 이 반 고 윙/크 */
