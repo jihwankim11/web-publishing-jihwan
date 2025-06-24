@@ -17,6 +17,7 @@ body{
 /* 로봇 전체박스 */
 .robot-box {
     padding-bottom: 700px;
+}
 
 /* 로봇머리 */
 .head{
