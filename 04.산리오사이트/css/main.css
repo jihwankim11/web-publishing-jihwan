@@ -57,6 +57,9 @@ body {
 #top-area {
   /* 고정포지션 : fixed */
   position: fixed;
+  top: 0;
+  /* top값을 안주면 젠틀하므로 body의 상단패딩때문에
+  밀려서 내려온다~! */
   width: 100%;
   background-color: #fff;
 }
