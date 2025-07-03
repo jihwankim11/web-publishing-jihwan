@@ -8,15 +8,15 @@
 @import url(./reset.css);
 @import url(./core.css);
 
-/* 공통변수 셋팅 */
-/* ((변수사용법))
- root{
-    ---변수명 : 값; }
+/* 공통변수 셋팅
+  [ 변수사용법 ]
+   ((변수셋팅법))
+   :root{
+    --변수명:값;
+   }
     ((변수호출법))
     var(--변수명)
-    
-    */
-
+*/
 :root {
   /* 색상변수 : --이름-color */
   --main-gray-color: #222;
@@ -27,7 +27,7 @@
   /* 사이즈변수 : --이름-size */
   --top-area-padding-size: 2rem 5rem;
   --bottom-area-padding-size: 5rem;
-  --contents-box-padding-size: 8.5rem 0 0;
+  --contents-box-padding-size: 8.5rem 0;
   --cat-title-padding-size: 1.5rem 1rem;
 }
 
@@ -45,21 +45,24 @@ body {
 
 /* 1. 상단영역 */
 body {
-  /* fixed 상단메뉴가 배너박스를 가리므로 상단패딩으로 밀어서 보이게함 */ 
-  padding-top: 100px;
+  /* fixed 상단메뉴가 배너박스를 가리므로 상단패딩으로
+  밀어서 보이게함 */
+  padding-top: 10rem;
 
-  /* 임시 테스트용 
-   height: 300vh;
-    그라데이션은 배경이미지속성으로 넣는다! 
-   background-image: linear-gradient(rgb(231, 189, 189), rgb(221, 221, 250));*/
- }
+  /* 임시 테스트용 */
+  /* height: 300vh; */
+  /* 그라데이션은 배경이미지속성으로 넣는다! */
+  /* background-image: linear-gradient(rgb(255, 182, 182), rgb(184, 184, 252)); */
+}
 /* 겉박스 */
 #top-area {
   /* 고정포지션 : fixed */
   position: fixed;
   top: 0;
   /* top값을 안주면 젠틀하므로 body의 상단패딩때문에
-  밀려서 내려온다~! */
+  밀려서 내려온다!!! */
+  z-index: 9999;
+  /* 메뉴 등 다른 요소보다 위로 오게 함! */
   width: 100%;
   background-color: #fff;
 }
@@ -70,20 +73,19 @@ body {
 /* 상단영역 플렉스 */
 .top-area > ul {
   display: flex;
-  /* 진행방향 정렬중 양끝정렬 */
+  /* 진행방향 정렬중 양끝배치 정렬 */
   justify-content: space-between;
 }
 /* 로고 */
 h1.logo img {
   height: min(4rem, 4vw);
-
   /* 
-  min (값,값)
-  내부설정값 중 작은 값을 출력
-  -> 커지는 값 중 작은값을 출력하므로
-  최대값을 지정한 것 과 같다
-  4rem-> html에 지정된 글자크기의 4배크기
-  4vw -> 보이는화면의 크기의 4%크기
+    min(값,값)
+    내부설정값 중 작은 값을 출력
+    -> 커지는 값 중 작은값을 출력하므로
+    최대값을 지정한 것과 같다!
+    4rem -> html에 지정된 글자크기의 4배크기
+    4vw -> 보이는화면 가로크기의 4%크기
   */
 }
 
@@ -93,9 +95,9 @@ h1.logo img {
 }
 .gnb > ul {
   height: 100%;
-  /*  플렉스박스 직계자식 li가 옆으로흘러감 */
+  /* 플렉스박스 - 직계자식 li가 옆으로 흘러감! */
   display: flex;
-  /* 진행방향의 수직정렬 중앙 */
+  /* 진행방향의 수직정렬 중앙 - 높이값 100%설정시 효과 */
   align-items: center;
   /* 플렉스 사이간격 */
   gap: 8rem;
@@ -106,40 +108,71 @@ h1.logo img {
 
 /* 모바일 GNB 햄버거버튼 */
 .gnb-mob {
+  position: absolute;
+  top: 2rem;
+  right: 5rem;
+  width: 34px;
+  height: 34px;
+  /* 처음에 안보임! */
+  display: none;
 }
 .gnb-mob span {
+  display: block;
+  width: 100%;
+  height: 4px;
+  background-color: #000;
+  transition: 0.3s ease-out;
 }
 /* 2번째,3번째 span */
 .gnb-mob span + span {
+  margin-top: 11px;
 }
 .gnb-mob.on span:nth-child(1) {
+  translate: 0 15px;
+  rotate: 45deg;
 }
 .gnb-mob.on span:nth-child(2) {
+  translate: 17px 0;
+  width: 0;
 }
 .gnb-mob.on span:nth-child(3) {
+  translate: 0 -15px;
+  rotate: -45deg;
 }
 
 /* 2. 메인영역 */
 /* 메인영역 개별박스 공통 */
 #main-area > div {
+  padding: var(--contents-box-padding-size);
 }
 /* 2-1. 배너영역 */
 .banner {
+  position: relative;
+  /* 배너 두번째 모바일 이미지의 부모 역 할! */
   background: url(../images/main_visual_bg.jpg) 0/50px;
-  /* 이미지가 인라인 요소니깐 텍스트 중앙정렬 가로중앙셋팅 */
+  /* 이미지가 인라인요소니까 텍스트 중앙정렬로 가로중앙셋팅 */
   text-align: center;
   /* 사방패딩 */
   padding: 10rem;
 }
-/* 배너 이미지 */
+/* 배너 이미지 공통 셋팅 */
 .banner img {
   height: 60vmin;
+  /* 트랜지션 적용 */
+  transition: 0.7s ease-in-out;
 }
-/* 데스크탑 박스 */
-.dt-box {
-}
-/* 모바일용 박스 */
-.mob-box {
+/* 모바일용 이미지(2번째것) */
+.banner img:last-child {
+  position: absolute;
+  /* 앱솔루트 부모요소의 정중앙 배치하기 
+  여기서는 y축 트랜스 레이트 값을 -50%가 아니고....
+  -250%로 위쪽에 올려놓음 결국 -50%로 변경할 것임*/
+  
+  top: 50%;
+  left: 50%;
+  translate: -50% -250%;
+  /* 투명도0 */
+  opacity: 0;
 }
 
 /* 2-2. 캐릭터 영역 */
