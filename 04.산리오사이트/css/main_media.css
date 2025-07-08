@@ -71,5 +71,17 @@
   .cat-list ul li {
     width: calc(50% - 2rem);
   }
+  /* 컴퍼니 리스트 한줄로 밑으로 1개씩 보이게하기 */
+  .com-type-list {
+    /* 한줄에 1개씩 보이게하기 */
+    width: 100%;
+    padding: 0;
+    display: block;
+}
+/* 설명p요소없애기 */
+.com-type-list p {
+    display: none;
+  }
+  
 }
 /****** 800px 이하 미디어쿼리 종료 ******/
