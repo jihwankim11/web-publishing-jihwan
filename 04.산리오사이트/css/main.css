@@ -177,36 +177,85 @@ h1.logo img {
 
 /* 2-2. 캐릭터 영역 */
 .character {
+  background-color: var(--character-area-color);
+  /* 플렉스박스로 랩핑하여 하단 패딩은 10rem */
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0 0 10rem;
+}
+
+/* 캐릭터 텀플릿 */
+.cat-list {
+  /* 캐릭터 리스트 박스 */
+  width: 100%;
+
+  /* 캐릭터 셋팅 */
 }
 /* 캐릭터 리스트 */
 .cat-list ul {
+  /* 셋팅 */
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0 0 10rem;
+  justify-content: center; /* 가로 중앙 정렬을 위해 추가 */
 }
 .cat-list ul li {
+  /* 한줄당 4개씩 패딩은 1rem 보더박스 글자 줄바꿈방지 */
+  width: calc(25% - 2rem);
+  padding: 1rem;
+  box-sizing: border-box;
+  /* 글자 줄바꿈 방지 */
+  white-space: nowrap;
 }
 /* 이미지 파트박스 */
 .img-part {
+  /* 하위 이미지중 두번째 이미지가 앱솔루트이고 그 이미지의 부모자격이 필요함 */
+  position: relative;
+
 }
 /* 두개의 이미지 공통 */
 .cat-list img {
+  /* 두개의 이미지 크기 100% */
+  width: 100%;
 }
 /* 마지막 이미지 숨기기 */
 .cat-list img:last-child {
+  /* 두번째 이미지 앱솔루트 */
+  position: absolute;
+  top: 0;
+  left: 0;
+  /* 처음에는 안보임! */
+  opacity: 0;
+  /* 트랜지션 적용 */
+  transition: opacity 0.3s ease-in-out;
 }
 /* 오버시 이미지 보이기 */
 .cat-list li:hover img:last-child {
+  /* 오버시 투명도1 */
+  opacity: 1;
 }
 
 /* 이미지 박스 */
 .cat-list figure {
+  /* 보더 1px #ccc 둥근모서리 20px 넘치는 요소 숨김 */
+  border: 1px solid #ccc;
+  border-radius: 2rem;
+  overflow: hidden;
 }
 /* 이미지 설명 */
 .cat-list figcaption {
+  text-align: center;
+  padding: var(--cat-title-padding-size);
 }
 /* 캐릭터 타이틀 */
 .cat-list figcaption h3 {
+  font-size: 2.2rem;
+  font-weight: normal;
 }
 /* 캐릭터 영문 */
 .cat-list figcaption p {
+  /* 글자크기1.2 */
+  font-size: 1.2rem;
 }
 
 /* 2-3. 컴퍼니영역 */
