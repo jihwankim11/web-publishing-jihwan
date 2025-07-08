@@ -44,15 +44,16 @@
               </ul>
             </nav>
             <!-- 모바일용 햄버거 버튼 -->
-            <!-- // this는 클릭된 nav자신
-             // classList는 클래스 컨트롤하는 객체
-             // toggle(클래스명)은 클래스 넣기/빼기 메서드
-             // 앞에 있는 nav요소를 선택해서 클래스 on넣기/빼기 -->
             <nav
               class="gnb-mob"
-              onclick="this.classList.toggle('on');
-             document.querySelector('.gnb')
-             .classList.toggle('on');
+              onclick="
+             // this는 클릭된 nav자신
+             // classList는 클래스 컨트롤하는 객체
+             // toggle(클래스명)은 클래스 넣기/빼기 메서드
+              this.classList.toggle('on');
+              // 앞에 있는 nav요소를 선택해서 클래스 on넣기/빼기
+              document.querySelector('.gnb')
+              .classList.toggle('on');
              "
             >
               <a href="#">
@@ -70,19 +71,19 @@
       <!-- 2-1.배너영역 -->
       <div class="banner">
         <section class="inbox dt-box">
-          <!-- DT 용 배너 -->
+          <!-- DT용 배너이미지 -->
           <img
             src="./images/main_visual_pc_v1.png"
             alt="데스크탑용 메인 배너"
           />
-          <!-- mobile 용 배너 -->
+          <!-- Mobile용 배너이미지 -->
           <img src="./images/main_visual_m_v1.png" alt="모바일용 메인 배너" />
         </section>
       </div>
-      <!-- 2.2 캐릭터영역 -->
+      <!-- 2-2. 캐릭터영역 -->
       <div class="character">
         <section class="inbox">
-          <!-- 서브타이틀 -->
+          <!-- 서브 타이틀 -->
           <h2 class="stit">character</h2>
           <!-- 더보기 버튼 박스 -->
           <div class="center-box">
@@ -319,6 +320,109 @@
                   <figcaption>
                     <h3>꿈속의 뮤</h3>
                     <p class="title-en">Mewkledreamy</p>
+                  </figcaption>
+                </figure>
+              </li>
+            </ul>
+          </div>
+        </section>
+      </div>
+      <!-- 2-3. 컴퍼니영역 -->
+      <div class="company">
+        <section class="inbox">
+          <!-- 서브 타이틀 -->
+          <h2 class="stit">company</h2>
+          <!-- 컴퍼니 리스트박스 -->
+          <div class="company-list">
+            <ul class="com-type-list">
+              <li>
+                <figure>
+                  <div class="img-part">
+                    <img src="./images/ico_company1.png" alt="회사소개" />
+                  </div>
+                  <figcaption>
+                    <h3>회사소개</h3>
+                    <p>맑고 깨끗한 강가에</p>
+                    <p>문화를 쌓아 올리자</p>
+                    <a href="#" class="com-btn">more</a>
+                  </figcaption>
+                </figure>
+              </li>
+              <li>
+                <figure>
+                  <div class="img-part">
+                    <img src="./images/ico_company3.png" alt="산리오코리아" />
+                  </div>
+                  <figcaption>
+                    <h3>회사연혁</h3>
+                    <p>산리오의 히스토리를</p>
+                    <p>확인하세요</p>
+                    <a href="#" class="com-btn">more</a>
+                  </figcaption>
+                </figure>
+              </li>
+              <li>
+                <figure>
+                  <div class="img-part">
+                    <img src="./images/ico_company4.png" alt="산리오스토어" />
+                  </div>
+                  <figcaption>
+                    <h3>사업영역</h3>
+                    <p>소셜 커뮤니케이션을</p>
+                    <p>산리오가 시작합니다</p>
+                    <a href="#" class="com-btn">more</a>
+                  </figcaption>
+                </figure>
+              </li>
+            </ul>
+          </div>
+        </section>
+      </div>
+      <!-- 2-4. 리쿠르트영역 -->
+      <div class="recruit">
+        <section class="inbox">
+          <h2 class="stit">recruit</h2>
+          <!-- 리쿠르트 리스트박스 -->
+          <div class="recruit-list">
+            <ul class="com-type-list">
+              <li>
+                <figure>
+                  <div class="img-part">
+                    <img src="./images/ico_recruit1.png" alt="채용공고" />
+                  </div>
+                  <figcaption>
+                    <h3>채용공고</h3>
+                    <p>산리오코리아에서</p>
+                    <p>인재를 찾습니다</p>
+                    <a href="#" class="com-btn">more</a>
+                  </figcaption>
+                </figure>
+              </li>
+
+              <li>
+                <figure>
+                  <div class="img-part">
+                    <img src="./images/ico_recruit2.png" alt="직무소개" />
+                  </div>
+                  <figcaption>
+                    <h3>직무소개</h3>
+                    <p>산리오코리아에서는</p>
+                    <p>어떤 일을 할까요?</p>
+                    <a href="#" class="com-btn">more</a>
+                  </figcaption>
+                </figure>
+              </li>
+
+              <li>
+                <figure>
+                  <div class="img-part">
+                    <img src="./images/ico_recruit3.png" alt="복리후생" />
+                  </div>
+                  <figcaption>
+                    <h3>복리후생</h3>
+                    <p>산리오코리아에서</p>
+                    <p>누릴 수 있는것!</p>
+                    <a href="#" class="com-btn">more</a>
                   </figcaption>
                 </figure>
               </li>

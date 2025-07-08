@@ -148,7 +148,7 @@ h1.logo img {
 /* 2-1. 배너영역 */
 .banner {
   position: relative;
-  /* 배너 두번째 모바일 이미지의 부모 역 할! */
+  /* 배너 두번째 모바일 이미지의 부모역할! */
   background: url(../images/main_visual_bg.jpg) 0/50px;
   /* 이미지가 인라인요소니까 텍스트 중앙정렬로 가로중앙셋팅 */
   text-align: center;
@@ -164,40 +164,31 @@ h1.logo img {
 /* 모바일용 이미지(2번째것) */
 .banner img:last-child {
   position: absolute;
-  /* 앱솔루트 부모요소의 정중앙 배치하기 
-  여기서는 y축 트랜스 레이트 값을 -50%가 아니고....
-  -250%로 위쪽에 올려놓음 결국 -50%로 변경할 것임*/
-  
+  /* 앱솔루트 부모요소의 정중앙 배치하기
+  여기서는 y축 트랜스레이트 값을 -50%가 아닌
+  -250%로 위쪽에 올려 놓음. 결국 -50%로 변경할 것임! */
   top: 50%;
   left: 50%;
   translate: -50% -250%;
-  /* 투명도0 */
+  /* 투명도 0 */
   opacity: 0;
 }
 
 /* 2-2. 캐릭터 영역 */
 .character {
   background-color: var(--character-area-color);
-  /* 플렉스박스로 랩핑하여 하단 패딩은 10rem */
-  display: flex;
-  flex-wrap: wrap;
-  padding: 0 0 10rem;
-}
-
-/* 캐릭터 텀플릿 */
-.cat-list {
-  /* 캐릭터 리스트 박스 */
-  width: 100%;
-
-  /* 캐릭터 셋팅 */
 }
 /* 캐릭터 리스트 */
 .cat-list ul {
-  /* 셋팅 */
+  /* 플렉스박스로 랩핑하여 하단 패딩은 10rem */
   display: flex;
   flex-wrap: wrap;
+  /* 
+    justify-content: center;
+    - Flex 컨테이너의 자식 요소들을 가로 방향(주 축)으로 중앙에 정렬합니다.
+  */
+  justify-content: center; /* 가로 중앙 정렬 추가 */
   padding: 0 0 10rem;
-  justify-content: center; /* 가로 중앙 정렬을 위해 추가 */
 }
 .cat-list ul li {
   /* 한줄당 4개씩 패딩은 1rem 보더박스 글자 줄바꿈방지 */
@@ -209,9 +200,9 @@ h1.logo img {
 }
 /* 이미지 파트박스 */
 .img-part {
-  /* 하위 이미지중 두번째 이미지가 앱솔루트이고 그 이미지의 부모자격이 필요함 */
+  /* 하위 이미지중 두번째 이미지가 앱솔루트이고
+  그 이미지의 부모자격이 필요함! */
   position: relative;
-
 }
 /* 두개의 이미지 공통 */
 .cat-list img {
@@ -224,14 +215,14 @@ h1.logo img {
   position: absolute;
   top: 0;
   left: 0;
-  /* 처음에는 안보임! */
+  /* 처음에 안보임! */
   opacity: 0;
   /* 트랜지션 적용 */
   transition: opacity 0.3s ease-in-out;
 }
 /* 오버시 이미지 보이기 */
 .cat-list li:hover img:last-child {
-  /* 오버시 투명도1 */
+  /* 오버시 투명도 1 */
   opacity: 1;
 }
 
@@ -254,27 +245,42 @@ h1.logo img {
 }
 /* 캐릭터 영문 */
 .cat-list figcaption p {
-  /* 글자크기1.2 */
+  /* 글자크기 1.2 */
   font-size: 1.2rem;
 }
 
 /* 2-3. 컴퍼니영역 */
 .company {
+  background-color: var(--company-area-color);
 }
 /* 2-4. 리쿠르트영역 */
 .recruit {
+  /* 배경넣기 - 색이반고윙/크 */
+  background: var(--character-area-color) url(../images/bg_recruit.png) no-repeat center 10vh/90%;
 }
 /* 컴퍼니 영역 & 리쿠르트 영역 
 공통 리스트 디자인 */
 .com-type-list {
+  /* 플렉스 박스 진행방향 정렬 동일하게 글자중앙 하단패딩10 */
+  display: flex;
+  justify-content: space-evenly;
+  text-align: center;
+  padding-bottom: 10rem;
 }
 /* 공통 타이틀 */
 .com-type-list h3 {
+  font-size: 2.2rem;
+  padding: 2rem 0;
+  font-weight: normal;
 }
 /* 공통 내용 */
 .com-type-list p {
+  font-size: 1.6rem;
 }
 .com-type-list p:last-of-type {
+  /* 하단 버튼과 사이간격 3 */
+  margin-bottom: 3rem;
+
 }
 /* 2-5. 플레이스영역 */
 #main-area .place {
