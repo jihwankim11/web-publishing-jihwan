@@ -1,0 +1,255 @@
+<?php
+
+	include_once('common.php');
+
+	include_once(G5_THEME_PATH.'/head_event.php');
+?>
+
+<div id="wrap" style="padding-top: 0px">
+
+    
+	<style>
+	
+		.img_pc {display:block; margin-bottom: 130px;}
+		.img_m {display:none}
+		
+		.content_inner {
+		
+			position:relative;
+			width:100%;
+			max-width:1920px;
+			margin:0 auto;
+		
+		}
+		
+		@media screen and (max-width:752px){
+		
+			.img_pc {display:none;}
+			.img_m {display:block;margin-bottom: 220px;}
+			
+			.content_inner {
+			
+				width: 100%;
+				
+			}
+			
+		}
+			
+	</style>
+		
+	<div class="content_inner">
+		
+		<div align="center">
+					
+			<div class="img_pc">
+
+		        <div class="row">
+			        
+					<center style="height:13636px;">		        
+						<img src="<?php echo G5_URL?>/img/implantkakao1.jpg">  
+					</center>
+					
+			        
+		        </div>
+		        
+			</div>
+			
+			<div class="img_m">
+				
+				<div class="row">
+					
+			        <center style="margin-top:-4px;">		        
+						<img src="<?php echo G5_URL?>/img/implantkakao1.jpg">  
+					</center>
+					
+		        </div>
+		        
+			</div>
+			
+		</div>
+		
+	</div>
+
+
+</div>
+
+
+<!-- FOOTER-->
+<div id="footer">
+
+    <div class="ft_logo img_wrap">
+        <img src="<?php echo G5_URL;?>/new/img/footer/ft_logo.png" alt="">
+    </div>
+    <div class="ft_txt">
+        <p class="ns">빠른상담하기</p>
+        <div>
+            <input type="checkbox" id="checkbox" name="checkbox" checked>
+            <span>개인정보활용동의</span>
+            <button onclick="javascript:location.href='<?echo G5_URL;?>/access.php'">자세히보기</button>
+        </div>
+    </div>
+    <div class="ft_write">
+        <input type="text" name="a_name" id="a_name" class="ft_write_opt" placeholder="성함">
+        <input type="text" name="a_phone" id="a_phone"  class="ft_write_opt" placeholder="연락처(-없이 입력)">
+    </div>
+    <div class="ft_btn">
+        <button class="img_wrap" onclick="javascript:form_insert()">
+            <img src="<?php echo G5_URL;?>/new/img/footer/ft_btn.png" alt="" >
+        </button>
+    </div>
+
+    <div class="ft_apply">
+        <div class="floor">
+            <a href="https://pf.kakao.com/_jKxhKxl" target="_blank" class="img_wrap"><img src="<?php echo G5_URL;?>/new/img/footer/ft_apply_btn1.png" alt=""></a>
+            <a href="https://booking.naver.com/booking/13/bizes/450335/items/3711813" target="_blank"  class="img_wrap"><img src="<?php echo G5_URL;?>/new/img/footer/ft_apply_btn2.png" alt=""></a>
+        </div>
+    </div>
+
+</div>
+
+
+<!-- M-FOOTER -->
+
+<?/**
+<div id="m_footer">
+    <div class="m_ft_bot">
+        <ul>
+            <li><a href="https://pf.kakao.com/_jKxhKxl" target="_blank" ><img src="<?php echo G5_URL;?>/new/img/footer/ft_apply_btn1.png" alt=""></a></li>
+            <li><a href="https://booking.naver.com/booking/13/bizes/450335/items/3711813" target="_blank"  ><img src="<?php echo G5_URL;?>/new/img/footer/ft_apply_btn2.png" alt=""></a></li>
+            <!-- <li><a href="#"><img src="<?php echo G5_URL;?>/new/img/footer/ft_apply_btn3.png" alt=""></a></li> -->
+            <li><a href="#"><img src="<?php echo G5_URL;?>/new/img/footer/ft_apply_btn4.png" alt=""></a></li>
+        </ul>
+    </div>
+</div>
+**/?>
+
+<div id="mo_footer">
+
+	<div class="mo_footer_wrap">
+
+		<div class="mo_footer_write">
+
+			<input type="text" id="a_name_m" name="a_name_m" value="" placeholder="성함">
+
+			<input type="text" name="a_phone_m" id="a_phone_m" value="" placeholder="연락처(-없이 입력)">
+
+			<div class="txt">
+				<input type="checkbox" name="checkbox_m" value="" id="checkbox_m" checked>
+				<label for="m_agree">개인정보 약관에 동의합니다</label>
+				<span onclick="javascript:location.href='<?echo G5_URL;?>/access.php'">[약관보기]</span>
+			</div>
+
+			<button type="button" name="button" class="mo_submit_btn" onclick="javascript:form_insert_m()">상담 신청하기</button>
+		</div>
+
+		<!--- sns 버튼 --->
+		<!-- <div class="mo_footer_sns">
+			<a href="https://pf.kakao.com/_jKxhKxl">
+				<img src="<?php echo G5_URL;?>/new/img/footer/ft_apply_btn1.png" alt="">
+			</a>
+			<a href="https://booking.naver.com/booking/13/bizes/450335/items/3711813">
+				<img src="<?php echo G5_URL;?>/new/img/footer/ft_apply_btn2.png" alt="">
+			</a>
+		</div> -->
+
+	</div>
+
+</div>
+
+<style media="screen">
+	#mo_footer {display: none;}
+
+	@media screen and (max-width: 768px){
+		#mo_footer {position: fixed; display: block; background: #0e1b44;  width: 100%;bottom: 0px;}
+
+		.mo_footer_wrap {color: #fff; width: 90%; margin: 0 auto; padding: 15px 0;}
+		.mo_footer_wrap h5 {text-align: center; font-size: 25px; font-weight: bold; padding-bottom: 15px;}
+
+		.mo_footer_write {}
+		.mo_footer_write select, .mo_footer_write input {width: 100%; margin-bottom: 3px; height: 35px; padding: 4px 6px; line-height: 1; box-sizing: border-box; box-shadow: none;}
+		.mo_footer_write select option {}
+		.mo_footer_write .txt {display: flex; align-items: center; padding: 5px 0;}
+		.mo_footer_write .txt input {width: 18px; height: 18px; margin-bottom: 0; margin-right: 4px}
+		.mo_footer_write .txt span {font-weight: bold; padding-left: 3px}
+		.mo_submit_btn {width: 100%; color: #0e1b44; font-weight: bold; text-align: center; background: #c3d2ff; font-size: 18px; border-radius: 5px; padding: 10px 0; margin-top: 5px;}
+
+		.mo_footer_sns {display: flex; padding-top: 10px; justify-content: space-around;}
+		.mo_footer_sns > a {display: block; width: calc((100% - 60px) / 2 ); }
+		.mo_footer_sns > a img {width: 100%;}
+	}
+</style>
+
+
+<script type="text/javascript">
+
+	function form_insert() {
+
+		if (document.getElementById('checkbox').checked != true) {
+			alert('개인정보 이용목적 및 취급방침에 동의 하셔야 신청 할 수 있습니다.');
+			return false;
+		}
+		if (document.getElementById('a_name').value == '' || document.getElementById('a_phone').value == '') {
+			alert('작성안된곳이 있습니다.');
+			return false;
+		}
+
+		$.ajax({
+
+			url:"send.php",
+			type:'GET',
+			data: {'a_code': 'LAN_4', 'a_subject' : 'kakao_jh', 'a_name' : document.getElementById('a_name').value, 'a_phone' : document.getElementById('a_phone').value, 'a_category' : '1_5_A'},
+			success:function(data){
+
+				alert("신청완료 되었습니다.");
+
+				location.reload();
+			},
+			error:function(jqXHR, textStatus, errorThrown){
+				alert("에러가 발생했습니다. \n" + textStatus + " : " + errorThrown);
+				self.close();
+			}
+		});
+
+
+	}
+	
+	
+	function form_insert_m() {
+
+		if (document.getElementById('checkbox_m').checked != true) {
+			alert('개인정보 이용목적 및 취급방침에 동의 하셔야 신청 할 수 있습니다.');
+			return false;
+		}
+		if (document.getElementById('a_name_m').value == '' || document.getElementById('a_phone_m').value == ''){
+			alert('작성안된곳이 있습니다.');
+			return false;
+		}
+
+		$.ajax({
+
+			url:"send.php",
+			type:'GET',
+			data: {'a_code': 'LAN_4', 'a_subject' : 'm_kakao_jh', 'a_name' : document.getElementById('a_name_m').value, 'a_phone' : document.getElementById('a_phone_m').value, 'a_category' : '1_5_B'},
+			success:function(data){
+
+				alert("신청완료 되었습니다.");
+
+				location.reload();
+				
+			},
+			error:function(jqXHR, textStatus, errorThrown){
+				alert("에러가 발생했습니다. \n" + textStatus + " : " + errorThrown);
+				self.close();
+			}
+		});
+
+
+	}
+
+</script>
+
+<?
+
+	//include_once('tail.php');
+
+?>
